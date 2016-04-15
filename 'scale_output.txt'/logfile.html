@@ -1,0 +1,73 @@
+<pre>
+Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+Vdbench distribution: vdbench50403
+
+18:19:08.955 input argument scanned: '-f'.\multihost_test.txt''
+18:19:08.962 input argument scanned: '-o'scale_output.txt''
+18:19:08.963 java.vendor                   Oracle Corporation
+18:19:08.963 java.home                     C:\Program Files (x86)\Java\jre1.8.0_77
+18:19:08.963 java.vm.specification.version 1.8
+18:19:08.964 java.vm.version               25.77-b03
+18:19:08.964 java.vm.vendor                Oracle Corporation
+18:19:08.964 java.specification.version    1.8
+18:19:08.965 java.class.version            52.0
+18:19:08.965 user.name                     user1
+18:19:08.965 user.dir                      C:\Users\user1\Desktop\vdbconvert
+18:19:08.965 java.class.path               C:\Users\user1\Desktop\vdbench50403\;C:\Users\user1\Desktop\vdbench50403\classes;C:\Users\user1\Desktop\vdbench50403\vdbench.jar 
+18:19:08.966 os.name                       Windows 7
+18:19:08.966 os.arch                       x86
+18:19:08.966 os.version                    6.1
+18:19:08.966 sun.arch.data.model           32
+18:19:08.976 
+18:19:08.978 Parameterscan error. See also output file 'parmscan.html' for details.
+18:19:08.979 
+18:19:08.980  usage: 
+18:19:08.981  ./vdbench [compare] [-f xxx] [-o xxx] [-e nn] [-i nn] [-j] [-jr] [-v] [-vq] [-s] [-k] [- "parmfile parameters"]
+18:19:08.982  
+18:19:08.982  '-f xxx': Workload parameter file name(s). Default 'parmfile' in current directory
+18:19:08.985  '-o xxx': Output directory for reporting. Default 'output' in current directory
+18:19:08.987  '-e nn':  Override elapsed=seconds. 
+18:19:08.987  '-i nn':  Override interval=seconds. 
+18:19:08.988  '-v':     Activate Data validation. 
+18:19:08.989  '-vq':    Activate Data validation, validate lba and data key (saves cpu) 
+18:19:08.989  '-j':     Activate Data validation with Journaling. 
+18:19:08.990  '-jr':    Recover existing Journal, Validate data and run workload 
+18:19:08.991  '-s':     Simulate execution. Do everything but I/O. 
+18:19:08.991  '-k':     Solaris only: Report kstat statistics on console. 
+18:19:08.992  
+18:19:08.993  
+18:19:08.993                                                                                    
+18:19:08.994 *example 1 parameter file contents, execute 'vdbench -f example1'                  
+18:19:08.995 *Single raw disk, 100% random read of 4k records at i/o rate of 100 for 10 seconds 
+18:19:08.996                                                                                    
+18:19:08.996 *SD:    Storage Definition                                                         
+18:19:08.997 *WD:    Workload Definition                                                        
+18:19:08.998 *RD:    Run Definition                                                             
+18:19:08.998 *                                                                                  
+18:19:08.999 sd=sd1,lun=/dev/rdsk/cxt0d0s0                                                      
+18:19:09.000 wd=wd1,sd=sd1,xfersize=4096,readpct=100                                            
+18:19:09.001 rd=run1,wd=wd1,iorate=100,elapsed=10,interval=1                                    
+18:19:09.003                                                                                    
+18:19:09.004                                                                                    
+18:19:09.005                                                                                    
+18:19:09.006 *example 2 parameter file contents, execute 'vdbench -f example2'                  
+18:19:09.007 *Two raw disks:                                                      
+18:19:09.008 *sd1 does 80 i/o's per second, read-to-write ratio 4:1, 4k records.  
+18:19:09.009 *sd2 does 120 i/o's per second, 100% write at 8k records.            
+18:19:09.010                                                                      
+18:19:09.010 sd=sd1,lun=/dev/rdsk/cxt0d0s0                                        
+18:19:09.011 sd=sd2,lun=/dev/rdsk/cxt0d1s0                                        
+18:19:09.012 wd=wd1,sd=sd1,xfersize=4k,readpct=80,skew=40                         
+18:19:09.012 wd=wd2,sd=sd2,xfersize=8k,readpct=0                                  
+18:19:09.013 rd=run1,wd=wd*,iorate=200,elapsed=10,interval=1                      
+18:19:09.014                                                                      
+18:19:09.014                                                                      
+18:19:09.015 For documentation, browse file 'vdbench.pdf' 
+18:19:09.023 
+18:19:09.024 Requested parameter file does not exist: '.\multihost_test.txt'
+18:19:09.025 
+java.lang.RuntimeException: Requested parameter file does not exist: '.\multihost_test.txt'
+	at Vdb.common.failure(common.java:315)
+	at Vdb.Vdb_scan.parm_error(Vdb_scan.java:54)
+	at Vdb.Vdb_scan.Vdb_scan_read(Vdb_scan.java:71)
+	at Vdb.Vdbmain.main(Vdbmain.java:566)
