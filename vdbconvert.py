@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
 #
-# vdbsetup.py - script for building Vdbench configurations
+# vdbconvert.py - convert Vdbench "flatfile.html" output files into CSVs
+#
+# Usage: vdbconvert.py flatfile.html output_path.csv
 #
 # Author: Ramon A. Lovato (ramonalovato.com)
 # For: DeepStorage, LLC (deepstorage.net)
